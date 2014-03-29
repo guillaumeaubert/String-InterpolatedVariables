@@ -1,0 +1,8 @@
+Build.PL
+LICENSE
+MANIFEST
+MANIFEST.SKIP
+META.json
+META.yml
+Makefile.PL
+ignore.txt
