@@ -3,6 +3,8 @@ package String::InterpolatedVariables;
 use strict;
 use warnings;
 
+use Readonly;
+
 
 =head1 NAME
 
@@ -16,6 +18,38 @@ Version 1.0.0
 =cut
 
 our $VERSION = '1.0.0';
+
+
+Readonly::Scalar my $VARIABLES_REGEX => qr/
+	# Ignore escaped sigils, since those wouldn't get interpreted as variables to interpolate.
+	(?<!\\)
+	# Allow literal, non-escapy backslashes.
+	(?:\\\\)*
+	(
+		# The variable needs to start with a sigil.
+		[\$\@]
+		# Account for the dereferencing, such as "$$" or "@$".
+		\$?
+		# Variable name.
+		(?:
+			# Note: include '::' to support package variables here.
+			\{(?:\w+|::)\} # Explicit {variable} name.
+			|
+			(?:\w|::)+     # Variable name.
+		)
+		# Catch nested data structures.
+		(?:
+			# Allow for a dereferencing ->.
+			(?:->)?
+			# Can be followed by either a hash or an array.
+			(?:
+				\{(?:\w+|'[^']+'|"[^"]+")\}  # Hash element.
+				|
+				\[['"]?\d+['"]?\]            # Array element.
+			)
+		)*
+	)
+/x;
 
 
 =head1 FUNCTIONS
