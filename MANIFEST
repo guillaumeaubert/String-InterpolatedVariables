@@ -11,6 +11,7 @@ README.md
 example/examples.txt
 ignore.txt
 t/00-load.t
+t/10-extract.t
 xt/changes.t
 xt/kwalitee.t
 xt/manifest.t
