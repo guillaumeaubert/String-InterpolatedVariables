@@ -20,6 +20,22 @@ Version 1.0.0
 our $VERSION = '1.0.0';
 
 
+=head1 SYNOPSIS
+
+	use String::InterpolatedVariables;
+
+	my $variables = String::InterpolatedVariables::extract(
+		'A $test->{'string'} from a PPI::Token::Quote::Double $object.'
+	);
+
+	# $variable now containts:
+	# [
+	#     '$test->{'string'}',
+	#     '$object',
+	# ]
+
+=cut
+
 Readonly::Scalar my $VARIABLES_REGEX => qr/
 	# Ignore escaped sigils, since those wouldn't get interpreted as variables to interpolate.
 	(?<!\\)
