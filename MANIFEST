@@ -6,6 +6,7 @@ META.json
 META.yml
 Makefile.PL
 README.md
+example/examples.txt
 ignore.txt
 xt/changes.t
 xt/kwalitee.t
