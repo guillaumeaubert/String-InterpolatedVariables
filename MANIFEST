@@ -5,4 +5,5 @@ MANIFEST.SKIP
 META.json
 META.yml
 Makefile.PL
+README.md
 ignore.txt
