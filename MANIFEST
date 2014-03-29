@@ -8,6 +8,7 @@ Makefile.PL
 README.md
 example/examples.txt
 ignore.txt
+t/00-load.t
 xt/changes.t
 xt/kwalitee.t
 xt/manifest.t
