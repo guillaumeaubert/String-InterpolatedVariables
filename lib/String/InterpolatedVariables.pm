@@ -54,6 +54,38 @@ Readonly::Scalar my $VARIABLES_REGEX => qr/
 
 =head1 FUNCTIONS
 
+=head2 extract()
+
+Extract variables from interpolated strings.
+
+	my $variables = String::InterpolatedVariables::extract(
+		'A string that we would eval with $variable inside',
+	);
+
+Note that you need to pass the text of the string, even if the string itself is
+destined to be interpolated. In other words, passing C<"Test $test"> would not
+find any variables, as C<$test> would get interpolated by Perl before the
+string is passed to the C<extract()> function. This feature is particularly
+useful if you're using PPI to read Perl code, since PPI will give you access to
+the text of the string itself for strings that would otherwise be interpolated
+during execution.
+
+=cut
+
+sub extract
+{
+	my ( $string ) = @_;
+
+	my $variables = [];
+	while ( my ( $variable ) = $string =~ $VARIABLES_REGEX )
+	{
+		push( @$variables, $variable );
+		$string =~ s/\Q$variable\E//g;
+	}
+
+	return $variables;
+}
+
 
 =head1 BUGS
 
