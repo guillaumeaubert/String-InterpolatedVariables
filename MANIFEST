@@ -10,6 +10,7 @@ Makefile.PL
 README.md
 example/examples.txt
 ignore.txt
+lib/String/InterpolatedVariables.pm
 t/00-load.t
 t/10-extract.t
 xt/changes.t
