@@ -1,6 +1,7 @@
 .perlcriticrc
 .travis.yml
 Build.PL
+Changes
 LICENSE
 MANIFEST
 MANIFEST.SKIP
