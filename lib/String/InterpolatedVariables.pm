@@ -87,8 +87,14 @@ Readonly::Scalar my $VARIABLES_REGEX => qr/
 Extract variables from interpolated strings.
 
 	my $variables = String::InterpolatedVariables::extract(
-		'A string that we would eval with $variable inside',
+		'A $test->{string} from a PPI::Token::Quote::Double $object.'
 	);
+
+	# $variables now contains:
+	# [
+	#     '$test->{string}',
+	#     '$object',
+	# ]
 
 Note that you need to pass the text of the string, even if the string itself is
 destined to be interpolated. In other words, passing C<"Test $test"> would not
