@@ -1,5 +1,5 @@
 ---
-abstract: 'extract variable names from interpolated strings.'
+abstract: 'Extract variable names from interpolated strings.'
 author:
   - 'Guillaume Aubert <aubertg@cpan.org>'
 build_requires:
@@ -17,7 +17,7 @@ name: String-InterpolatedVariables
 provides:
   String::InterpolatedVariables:
     file: lib/String/InterpolatedVariables.pm
-    version: v1.0.0
+    version: v1.0.1
 requires:
   Readonly: 0
   perl: 5.006
@@ -26,4 +26,4 @@ resources:
   homepage: https://metacpan.org/release/String-InterpolatedVariables
   license: http://www.gnu.org/licenses/gpl-3.0.txt
   repository: https://github.com/guillaumeaubert/String-InterpolatedVariables
-version: v1.0.0
+version: v1.0.1

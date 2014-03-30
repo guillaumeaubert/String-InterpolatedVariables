@@ -1,5 +1,8 @@
 Revision history for String-InterpolatedVariables
 
+v1.0.1  2014-03-29
+        - Fix typos and clean up documentation.
+
 v1.0.0  2014-03-29
         - Extracted distribution from
           Perl::Critic::Policy::ValuesAndExpressions::PreventSQLInjection.
