@@ -8,7 +8,7 @@ use Readonly;
 
 =head1 NAME
 
-String::InterpolatedVariables - extract variable names from interpolated strings.
+String::InterpolatedVariables - Extract variable names from interpolated strings.
 
 
 =head1 VERSION
@@ -28,7 +28,7 @@ our $VERSION = '1.0.0';
 		'A $test->{'string'} from a PPI::Token::Quote::Double $object.'
 	);
 
-	# $variable now containts:
+	# $variables now contains:
 	# [
 	#     '$test->{'string'}',
 	#     '$object',
