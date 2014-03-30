@@ -99,10 +99,10 @@ Extract variables from interpolated strings.
 Note that you need to pass the text of the string, even if the string itself is
 destined to be interpolated. In other words, passing C<"Test $test"> would not
 find any variables, as C<$test> would get interpolated by Perl before the
-string is passed to the C<extract()> function. This feature is particularly
-useful if you're using PPI to read Perl code, since PPI will give you access to
-the text of the string itself for strings that would otherwise be interpolated
-during execution.
+string is passed to the C<extract()> function. This function is thus more
+useful if you are using using a tool such as L<PPI> to read Perl code, since
+PPI will give you access to the text of the string itself for strings that
+would otherwise be interpolated during execution.
 
 =cut
 
