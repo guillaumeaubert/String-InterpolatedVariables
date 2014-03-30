@@ -25,12 +25,12 @@ our $VERSION = '1.0.0';
 	use String::InterpolatedVariables;
 
 	my $variables = String::InterpolatedVariables::extract(
-		'A $test->{'string'} from a PPI::Token::Quote::Double $object.'
+		'A $test->{string} from a PPI::Token::Quote::Double $object.'
 	);
 
 	# $variables now contains:
 	# [
-	#     '$test->{'string'}',
+	#     '$test->{string}',
 	#     '$object',
 	# ]
 
