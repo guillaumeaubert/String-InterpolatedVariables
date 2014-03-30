@@ -37,11 +37,12 @@ our $VERSION = '1.0.0';
 
 =head1 DESCRIPTION
 
-C<String::InterpolatedVariables> offers a way to extract the name of the variables that are present in interpolated strings.
+String::InterpolatedVariables offers a way to extract the name of the variables
+that are present in interpolated strings.
 
 This is particularly useful if you are using L<PPI> to parse Perl documents,
 and you want to know what variables would be interpolated inside the
-C<PPI::Token::Quote::Double> and C<PPI::Token::Quote::Interpolate> objects you
+L<PPI::Token::Quote::Double> and L<PPI::Token::Quote::Interpolate> objects you
 find there. A practical example of this use can be found in
 L<Perl::Critic::Policy::ValuesAndExpressions::PreventSQLInjection>.
 
