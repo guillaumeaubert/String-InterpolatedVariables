@@ -1,5 +1,8 @@
 Revision history for String-InterpolatedVariables
 
+v1.0.2  2014-04-12
+        - Add missing dependency (GH-1).
+
 v1.0.1  2014-03-29
         - Fix typos and clean up documentation.
 
