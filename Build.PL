@@ -43,6 +43,7 @@ my $builder = $class->new(
 	{
 		'Test::FailWarnings'   => 0,
 		'Test::More'           => 0.94,
+		'Test::Deep'           => 0,
 	},
 	requires             =>
 	{

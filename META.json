@@ -16,6 +16,7 @@
    "prereqs" : {
       "build" : {
          "requires" : {
+            "Test::Deep" : "0",
             "Test::FailWarnings" : "0",
             "Test::More" : "0.94"
          }
