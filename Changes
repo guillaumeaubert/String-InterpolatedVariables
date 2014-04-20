@@ -1,5 +1,8 @@
 Revision history for String-InterpolatedVariables
 
+v1.0.4  2014-04-19
+        - Fix "package version matches dist version" for CPANTS.
+
 v1.0.3  2014-04-17
         - Fix license declared in meta files.
 
