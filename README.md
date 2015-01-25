@@ -1,8 +1,8 @@
 String-InterpolatedVariables
 ============================
 
-[![Build Status](https://travis-ci.org/guillaumeaubert/String-InterpolatedVariables.png?branch=master)](https://travis-ci.org/guillaumeaubert/String-InterpolatedVariables)
-[![Coverage Status](https://coveralls.io/repos/guillaumeaubert/String-InterpolatedVariables/badge.png?branch=master)](https://coveralls.io/r/guillaumeaubert/String-InterpolatedVariables?branch=master)
+[![Build Status](https://travis-ci.org/guillaumeaubert/String-InterpolatedVariables.svg?branch=master)](https://travis-ci.org/guillaumeaubert/String-InterpolatedVariables)
+[![Coverage Status](https://coveralls.io/repos/guillaumeaubert/String-InterpolatedVariables/badge.svg?branch=master)](https://coveralls.io/r/guillaumeaubert/String-InterpolatedVariables?branch=master)
 
 Extract variable names from interpolated strings.
 
