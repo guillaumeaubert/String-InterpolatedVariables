@@ -3,7 +3,7 @@ String-InterpolatedVariables
 
 [![Build Status](https://travis-ci.org/guillaumeaubert/String-InterpolatedVariables.svg?branch=master)](https://travis-ci.org/guillaumeaubert/String-InterpolatedVariables)
 [![Coverage Status](https://coveralls.io/repos/guillaumeaubert/String-InterpolatedVariables/badge.svg?branch=master)](https://coveralls.io/r/guillaumeaubert/String-InterpolatedVariables?branch=master)
-[![Latest Version](https://img.shields.io/github/tag/guillaumeaubert/String-InterpolatedVariables.svg?style=flat)](https://metacpan.org/release/String-InterpolatedVariables)
+[![CPAN](https://img.shields.io/cpan/v/String-InterpolatedVariables.svg)](https://metacpan.org/release/String-InterpolatedVariables)
 
 Extract variable names from interpolated strings.
 
