@@ -3,19 +3,19 @@ require 5.006;
 use ExtUtils::MakeMaker;
 WriteMakefile
 (
-  'NAME' => 'String::InterpolatedVariables',
-  'VERSION_FROM' => 'lib/String/InterpolatedVariables.pm',
   'PREREQ_PM' => {
+                   'Test::More' => '0.94',
                    'Readonly' => 0,
                    'Test::Deep' => 0,
-                   'Test::FailWarnings' => 0,
-                   'Test::More' => '0.94'
+                   'Test::FailWarnings' => 0
                  },
   'INSTALLDIRS' => 'site',
+  'NAME' => 'String::InterpolatedVariables',
   'EXE_FILES' => [],
-  'PL_FILES' => {},
+  'VERSION_FROM' => 'lib/String/InterpolatedVariables.pm',
   'test' => {
               'TESTS' => 't/*.t'
-            }
+            },
+  'PL_FILES' => {}
 )
 ;
