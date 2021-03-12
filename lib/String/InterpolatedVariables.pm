@@ -66,7 +66,6 @@ Readonly::Scalar my $VARIABLES_REGEX => qr/
 	)
 /x;
 
-
 =head1 FUNCTIONS
 
 =head2 extract()
@@ -93,20 +92,17 @@ would otherwise be interpolated during execution.
 
 =cut
 
-sub extract
-{
-	my ( $string ) = @_;
+sub extract {
+    my ($string) = @_;
 
-	my $variables = [];
-	while ( my ( $variable ) = $string =~ $VARIABLES_REGEX )
-	{
-		push( @$variables, $variable );
-		$string =~ s/\Q$variable\E//g;
-	}
+    my $variables = [];
+    while ( my ($variable) = $string =~ $VARIABLES_REGEX ) {
+        push( @$variables, $variable );
+        $string =~ s/\Q$variable\E//g;
+    }
 
-	return $variables;
+    return $variables;
 }
-
 
 =head1 BUGS
 
