@@ -1,57 +1,90 @@
-String-InterpolatedVariables
-============================
+# NAME
 
-[![Build Status](https://travis-ci.org/guillaumeaubert/String-InterpolatedVariables.svg?branch=master)](https://travis-ci.org/guillaumeaubert/String-InterpolatedVariables)
-[![Coverage Status](https://coveralls.io/repos/guillaumeaubert/String-InterpolatedVariables/badge.svg?branch=master)](https://coveralls.io/r/guillaumeaubert/String-InterpolatedVariables?branch=master)
-[![CPAN](https://img.shields.io/cpan/v/String-InterpolatedVariables.svg)](https://metacpan.org/release/String-InterpolatedVariables)
-[![License](https://img.shields.io/badge/license-Perl%205-blue.svg)](http://dev.perl.org/licenses/)
+String::InterpolatedVariables - Extract variable names from interpolated strings.
 
-Extract variable names from interpolated strings.
+# VERSION
 
+version 2.000000
 
-INSTALLATION
-------------
+# SYNOPSIS
 
-To install this module, run the following commands:
+        use String::InterpolatedVariables;
 
-	perl Build.PL
-	./Build
-	./Build test
-	./Build install
+        my $variables = String::InterpolatedVariables::extract(
+                'A $test->{string} from a PPI::Token::Quote::Double $object.'
+        );
 
+        # $variables now contains:
+        # [
+        #     '$test->{string}',
+        #     '$object',
+        # ]
 
-SUPPORT AND DOCUMENTATION
--------------------------
+# DESCRIPTION
 
-After installing, you can find documentation for this module with the
-perldoc command.
+String::InterpolatedVariables offers a way to extract the name of the variables
+that are present in interpolated strings.
 
-	perldoc String::InterpolatedVariables
+This is particularly useful if you are using [PPI](https://metacpan.org/pod/PPI) to parse Perl documents,
+and you want to know what variables would be interpolated inside the
+[PPI::Token::Quote::Double](https://metacpan.org/pod/PPI%3A%3AToken%3A%3AQuote%3A%3ADouble) and [PPI::Token::Quote::Interpolate](https://metacpan.org/pod/PPI%3A%3AToken%3A%3AQuote%3A%3AInterpolate) objects you
+find there. A practical example of this use can be found in
+[Perl::Critic::Policy::ValuesAndExpressions::PreventSQLInjection](https://metacpan.org/pod/Perl%3A%3ACritic%3A%3APolicy%3A%3AValuesAndExpressions%3A%3APreventSQLInjection).
 
+# FUNCTIONS
+
+## extract()
+
+Extract variables from interpolated strings.
+
+        my $variables = String::InterpolatedVariables::extract(
+                'A $test->{string} from a PPI::Token::Quote::Double $object.'
+        );
+
+        # $variables now contains:
+        # [
+        #     '$test->{string}',
+        #     '$object',
+        # ]
+
+Note that you need to pass the text of the string, even if the string itself is
+destined to be interpolated. In other words, passing `"Test $test"` would not
+find any variables, as `$test` would get interpolated by Perl before the
+string is passed to the `extract()` function. This function is thus more
+useful if you are using using a tool such as [PPI](https://metacpan.org/pod/PPI) to read Perl code, since
+PPI will give you access to the text of the string itself for strings that
+would otherwise be interpolated during execution.
+
+# BUGS
+
+Please report any bugs or feature requests through the web interface at
+[https://github.com/guillaumeaubert/String-InterpolatedVariables/issues](https://github.com/guillaumeaubert/String-InterpolatedVariables/issues).
+I will be notified, and then you'll automatically be notified of progress on
+your bug as I make changes.
+
+# SUPPORT
+
+You can find documentation for this module with the perldoc command.
+
+        perldoc String::InterpolatedVariables
 
 You can also look for information at:
 
- * [GitHub's request tracker (report bugs here)]
-   (https://github.com/guillaumeaubert/String-InterpolatedVariables/issues)
+- GitHub (report bugs there)
 
- * [AnnoCPAN, Annotated CPAN documentation]
-   (http://annocpan.org/dist/String-InterpolatedVariables)
+    [https://github.com/oalders/String-InterpolatedVariables/issues](https://github.com/oalders/String-InterpolatedVariables/issues)
 
- * [CPAN Ratings]
-   (http://cpanratings.perl.org/d/String-InterpolatedVariables)
+- MetaCPAN
 
- * [MetaCPAN]
-   (https://metacpan.org/release/String-InterpolatedVariables)
+    [https://metacpan.org/release/String-InterpolatedVariables](https://metacpan.org/release/String-InterpolatedVariables)
 
+# AUTHOR
 
-LICENSE AND COPYRIGHT
----------------------
+Guillaume Aubert <aubertg@cpan.org>
 
-Copyright (C) 2014-2017 Guillaume Aubert.
+# COPYRIGHT AND LICENSE
 
-This code is free software; you can redistribute it and/or modify it under the
-same terms as Perl 5 itself.
+This software is copyright (c) 2014 by Guillaume Aubert.
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY
-WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE. See the LICENSE file for more details.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
